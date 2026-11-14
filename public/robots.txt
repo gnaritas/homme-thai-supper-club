@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://homme-thai-supper-club-production.up.railway.app/sitemap.xml
