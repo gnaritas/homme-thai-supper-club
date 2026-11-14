@@ -44,6 +44,11 @@ h2{font-family:var(--f-disp);font-weight:400;font-size:clamp(26px,4vw,40px);line
 h3{font-family:var(--f-disp);font-weight:400;font-size:21px;margin-bottom:8px}
 p{max-width:68ch}
 main p + p{margin-top:16px}
+main .wrap > p + .duo, main .wrap > p + .grid2{margin-top:24px}
+main .wrap > .press + p.note, main .wrap > .faq + p.note{margin-top:14px}
+main .wrap > p.lede + span.saidso{margin-top:20px}
+main .wrap > .motto-line + p, main .wrap > blockquote + p, main .wrap > p + ul.press, main .wrap > .saidso + .motto-line{margin-top:16px}
+.faq details > p + p{margin-top:8px}
 .lede{font-size:clamp(17px,2.3vw,20px);line-height:1.6;color:var(--ink);margin-bottom:20px;max-width:60ch}
 .note{font-size:13.5px;color:var(--smoke);max-width:60ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
@@ -55,7 +60,7 @@ main p + p{margin-top:16px}
 .rating b{font-family:var(--f-disp);font-size:26px;color:var(--brick);letter-spacing:.02em}
 
 /* place-card panel (the right-hand hero column + visit page) */
-.placecard{background:var(--card);border:2px solid var(--ink);padding:24px 24px 20px}
+.placecard{background:var(--card);border:2px solid var(--ink);padding:24px 24px 22px;margin-bottom:18px}
 .placecard::before{content:"";display:block;height:4px;margin:-2px -2px 18px;background:var(--butter)}
 .placecard h3{font-size:14px;font-family:var(--f-label);letter-spacing:.22em;text-transform:uppercase;color:var(--brick);margin-bottom:12px}
 .placecard .addr{font-family:var(--f-disp);font-size:19px;line-height:1.4}
@@ -64,12 +69,16 @@ main p + p{margin-top:16px}
 
 .hours{border-collapse:collapse;width:100%;max-width:430px}
 .hours th{text-align:left;font-family:var(--f-label);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick);padding:4px 10px 8px}
-.hours td{border-bottom:1px dashed var(--smoke);padding:9px 10px;font-size:15px}
+.hours td{border-bottom:1px dashed var(--smoke);padding:9px 10px 9px 0;font-size:15px;white-space:nowrap}
+.hours td + td{text-align:right;padding-left:14px}
 .hours td:last-child{text-align:right;color:var(--deep)}
 .hours caption{text-align:left;font-family:var(--f-label);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);padding-bottom:10px}
 
 .map-frame{width:100%;height:340px;border:1.5px solid var(--ink);background:var(--card);margin-top:18px}
 .map-frame iframe{display:block;width:100%;height:100%;border:0}
+.duo{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.duo.mid{align-items:center}
+.duo .addr{font-family:var(--f-disp);font-size:19px}
 
 /* menu */
 .menu-intro{max-width:60ch}
@@ -133,6 +142,8 @@ footer{border-top:4px double var(--ink);margin-top:84px;padding:26px 0 44px}
 
 @media (max-width:860px){
   .hero .grid2{grid-template-columns:1fr}
+  .duo, .duo.mid{grid-template-columns:1fr}
+  .hero .placecard{margin-top:18px}
   nav{margin-left:0}
   .info-grid{grid-template-columns:1fr}
 }
@@ -144,3 +155,5 @@ footer{border-top:4px double var(--ink);margin-top:84px;padding:26px 0 44px}
 @media (prefers-reduced-motion:no-preference){
   a.btn{transition:background .16s ease,border-color .16s ease,color .16s ease}
 }
+
+/* sweep fixes 2026-11-14: .duo responsive grid; junction spacing; placecard padding; hours nowrap; faq affordance */
