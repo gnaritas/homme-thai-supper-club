@@ -24,7 +24,7 @@ img,svg{max-width:100%}
 
 /* header — a double-rule like a placemat border */
 header{background:var(--paper);border-bottom:4px double var(--ink)}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;padding:16px 0}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;padding-top:16px;padding-bottom:16px}
 .brand{text-decoration:none;color:var(--ink);line-height:1.02}
 .bname{display:block;font-family:var(--f-disp);font-size:30px;letter-spacing:.06em}
 .btag{display:block;font-family:var(--f-label);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brick);margin-top:2px}
